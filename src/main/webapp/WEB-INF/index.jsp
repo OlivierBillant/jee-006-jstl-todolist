@@ -25,16 +25,19 @@
 	</h2> --%>
 
 	<h1>Mes tâches en cours</h1>
-
+	<%-- <h2>
+		Test affichage trashTache : <span>${trashTache}</span>
+	</h2> --%>
 	<h2>
 		<span> <c:forEach var="nouvelleTache" items="${toDo}">
-				<ul>
-					<li>${nouvelleTache}
-						<!-- <form action="./DeleteServlet" method="POST">
-							<button name="nouvelleTache">DEL</button>
-						</form> -->
-					</li>
-				</ul>
+				<form action="./Traitement" method="POST">
+					<ul>
+						<li>${nouvelleTache}
+							<button name="trashTache" value="${nouvelleTache}">DEL</button>
+						</li>
+					</ul>
+				</form>
+
 			</c:forEach>
 		</span>
 	</h2>
